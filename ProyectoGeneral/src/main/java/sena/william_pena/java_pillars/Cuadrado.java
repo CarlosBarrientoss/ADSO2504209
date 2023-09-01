@@ -1,6 +1,6 @@
-package proyecto_java;
+package sena.william_pena.java_pillars;
 
-public class Cuadrado extends FigurasGeometricas {
+public class Cuadrado extends GeometricFigures {
 
 
     public Cuadrado() {
@@ -19,7 +19,7 @@ public class Cuadrado extends FigurasGeometricas {
     }
 
     @Override
-    public double hallarArea() {
+    public double calculateArea() {
 
         double area = Math.pow(base, 2);
         System.out.println(String.format("Area del cuadrado: %.2f", area));
@@ -27,7 +27,7 @@ public class Cuadrado extends FigurasGeometricas {
     }
 
     @Override
-    public double hallarPerimetro() {
+    public double calculatePerimeter() {
 
         double perimetro = base * 4;
         System.out.println(String.format("Perimetro del cuadrado: %.2f", perimetro));

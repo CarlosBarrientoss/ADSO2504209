@@ -1,6 +1,8 @@
-package proyecto_java;
+package sena.william_pena.mains;
 
-public class Main {
+import sena.william_pena.java_pillars.*;
+
+public class GeometricFiguresMainApp {
     public static void main(String... args){
 
 
@@ -20,11 +22,11 @@ public class Main {
         System.out.println("");
     }
 
-    public static void hallarAreaGeneral(FigurasGeometricas figura){
-        figura.hallarArea();
+    public static void hallarAreaGeneral(GeometricFigures figura){
+        figura.calculateArea();
     }
 
-    public static void hallarPerimetroGeneral(FigurasGeometricas figura){
-        figura.hallarPerimetro();
+    public static void hallarPerimetroGeneral(GeometricFigures figura){
+        figura.calculatePerimeter();
     }
 }

@@ -1,8 +1,6 @@
-package proyecto_java;
+package sena.william_pena.java_pillars;
 
-import java.io.FileReader;
-
-public class Triangulo extends FigurasGeometricas {
+public class Triangulo extends GeometricFigures {
 
     public Triangulo() {
         super();
@@ -29,7 +27,7 @@ public class Triangulo extends FigurasGeometricas {
     }
 
     @Override
-    public double hallarArea(){
+    public double calculateArea(){
 
         double area = (super.base * super.altura) / 2;
         System.out.println(String.format("Area del triangulo: %.2f", area));
@@ -37,7 +35,7 @@ public class Triangulo extends FigurasGeometricas {
     }
 
     @Override
-    public double hallarPerimetro() {
+    public double calculatePerimeter() {
 
         double perimetro = super.base * 3;
         System.out.println(String.format("Perimetro del triangulo: %.2f", perimetro));

@@ -1,6 +1,6 @@
-package proyecto_java;
+package sena.william_pena.java_pillars;
 
-public class Rectangulo extends FigurasGeometricas{
+public class Rectangulo extends GeometricFigures{
 
     // Constructores
     public Rectangulo(){
@@ -29,7 +29,7 @@ public class Rectangulo extends FigurasGeometricas{
     }
 
     @Override
-    public double hallarArea(){
+    public double calculateArea(){
 
         // Logica para hallar el area de un rectangulo
         double area = super.base * super.altura;
@@ -38,7 +38,7 @@ public class Rectangulo extends FigurasGeometricas{
     }
 
     @Override
-    public double hallarPerimetro(){
+    public double calculatePerimeter(){
         // Lógica para hallar el perimetro de un rextangulo
         double perimetro = (super.base + super.altura) * 2;
         System.out.println(String.format("Perimetro del rectangulo: %.2f", perimetro));
