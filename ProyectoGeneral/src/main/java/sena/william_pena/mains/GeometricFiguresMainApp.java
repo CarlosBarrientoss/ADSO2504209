@@ -22,11 +22,11 @@ public class GeometricFiguresMainApp {
         System.out.println("");
     }
 
-    public static void hallarAreaGeneral(GeometricFigures figura){
+    public static void hallarAreaGeneral(IGeometricFigures figura){
         figura.calculateArea();
     }
 
-    public static void hallarPerimetroGeneral(GeometricFigures figura){
+    public static void hallarPerimetroGeneral(IGeometricFigures figura){
         figura.calculatePerimeter();
     }
 }

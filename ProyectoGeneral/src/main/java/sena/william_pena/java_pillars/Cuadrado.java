@@ -1,27 +1,28 @@
 package sena.william_pena.java_pillars;
 
-public class Cuadrado extends GeometricFigures {
+public class Cuadrado implements IGeometricFigures {
 
+    private double lado;
 
     public Cuadrado() {
     }
 
     public Cuadrado(double lado) {
-        base = lado;
+        this.lado = lado;
     }
 
     public double getLado() {
-        return base;
+        return lado;
     }
 
     public void setLado(double lado) {
-        this.base = lado;
+        this.lado = lado;
     }
 
     @Override
     public double calculateArea() {
 
-        double area = Math.pow(base, 2);
+        double area = Math.pow(this.lado, 2);
         System.out.println(String.format("Area del cuadrado: %.2f", area));
         return area;
     }
@@ -29,8 +30,8 @@ public class Cuadrado extends GeometricFigures {
     @Override
     public double calculatePerimeter() {
 
-        double perimetro = base * 4;
-        System.out.println(String.format("Perimetro del cuadrado: %.2f", perimetro));
-        return perimetro;
+        double perimeter = this.lado * 4;
+        System.out.println(String.format("Perimetro del cuadrado: %.2f", perimeter));
+        return perimeter;
     }
 }

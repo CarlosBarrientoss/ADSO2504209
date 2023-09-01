@@ -1,35 +1,37 @@
 package sena.william_pena.java_pillars;
 
-public class Triangulo extends GeometricFigures {
+public class Triangulo implements IGeometricFigures {
 
-    public Triangulo() {
-        super();
+    private double lado;
+    private double altura;
+
+    public Triangulo() {}
+
+    public Triangulo(double lado, double altura) {
+        this.lado = lado;
+        this.altura = altura;
     }
 
-    public Triangulo(double base, double altura) {
-        super(base, altura);
+    public double getLado() {
+        return this.lado;
     }
 
-    public double getBase() {
-        return base;
-    }
-
-    public void setBase(double base) {
-        super.base = base;
+    public void setLado(double lado) {
+        this.lado = lado;
     }
 
     public double getAltura() {
-        return altura;
+        return this.altura;
     }
 
     public void setAltura(double altura) {
-        super.altura = altura;
+        this.altura = altura;
     }
 
     @Override
     public double calculateArea(){
 
-        double area = (super.base * super.altura) / 2;
+        double area = (this.lado * this.altura) / 2;
         System.out.println(String.format("Area del triangulo: %.2f", area));
         return area;
     }
@@ -37,8 +39,8 @@ public class Triangulo extends GeometricFigures {
     @Override
     public double calculatePerimeter() {
 
-        double perimetro = super.base * 3;
-        System.out.println(String.format("Perimetro del triangulo: %.2f", perimetro));
-        return perimetro;
+        double perimeter = this.lado * 3;
+        System.out.println(String.format("Perimetro del triangulo: %.2f", perimeter));
+        return perimeter;
     }
 }
