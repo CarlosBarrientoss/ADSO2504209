@@ -7,13 +7,16 @@ public class ArrayPrincipal {
     public static void main(String[] args) {
 
 
-        Persona persona[]= new Persona[5];
+        Persona persona[]= new Persona[1];
         Scanner consola = new Scanner(System.in);
         Controladores controlador = new Controladores();
 
 
         controlador.llenarArreglo(persona, consola);
         controlador.mostrarArreglo(persona);
+
+
+        consola.close();
     }
 
 
