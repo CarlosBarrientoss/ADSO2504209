@@ -7,10 +7,13 @@ import estructuradedatos.Controladores;
 public class ArrayPrincipal{
     
     public static void main (String[] args){
-        
-        Persona personas[] = new Persona[5];
 
         Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingresa el tamaño del vector");
+        int size = Integer.parseInt(entrada.nextLine());
+
+        Persona personas[] = new Persona[size];
+    
 
         Controladores controlador = new Controladores();
         
@@ -18,7 +21,9 @@ public class ArrayPrincipal{
         
         controlador.mostrarArreglo(personas);
 
-
+        controlador.buscarNombre(personas, entrada);
+        controlador.buscarCedula(personas, entrada);
+        entrada.close();
     
     }
     
