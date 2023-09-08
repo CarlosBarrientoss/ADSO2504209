@@ -5,8 +5,8 @@ public class Persona {
     private int cedula;
     private double sueldo;
     private int celular;
-    private char genero;
-    
+    private char genero;    
+
     public Persona(String nombre) {
         this.nombre = nombre;
     }
@@ -64,10 +64,10 @@ public class Persona {
         StringBuilder sb = new StringBuilder();
         sb.append("Persona{");
         sb.append("nombre=").append(nombre);
-        // sb.append(", cedula=").append(cedula);
-        // sb.append(", sueldo=").append(sueldo);
-        // sb.append(", celular=").append(celular);
-        // sb.append(", genero=").append(genero);
+        sb.append(", cedula=").append(cedula);
+        sb.append(", sueldo=").append(sueldo);
+        sb.append(", celular=").append(celular);
+        sb.append(", genero=").append(genero);
         sb.append('}');
         return sb.toString();
     }
