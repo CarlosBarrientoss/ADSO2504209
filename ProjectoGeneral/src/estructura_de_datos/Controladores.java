@@ -4,12 +4,8 @@ import java.util.Scanner;
 
 public class Controladores implements IArregloPersona {
     //metodo para validar el nombre
-    public static boolean nombreValido(String nombre){
-        return nombre.matches("^[a-zA-Z\\s]+$");
-    }
-    public static boolean cedulaValido(String cedula){
-        return cedula.matches("\\d+");
-    }
+
+
 
 
     @Override
@@ -55,5 +51,33 @@ public class Controladores implements IArregloPersona {
         for(Persona nombre : persona){
             System.out.println("nombre persona el: " + nombre);
         }
+    }
+
+    @Override
+    public void buscarNombre(Persona[] persona) {
+        for(Persona nombre : persona){
+            if(nombre.getNombre().equals("Carlos")){
+                System.out.println("fue encontrado en el vector.");
+            }
+        }
+    }
+
+    @Override
+    public void buscarCedula(Persona[] persona) {
+        for(Persona cedula : persona){
+            if (cedula.getCedula()==1005040452){
+                System.out.println("La cedula fue encontrada.");
+            }
+        }
+    }
+
+    @Override
+    public boolean nombreValido(Persona[] persona, String nombre ) {
+        return nombre.matches("^[a-zA-Z\\s]+$");
+    }
+
+    @Override
+    public boolean cedulaValido(Persona[] persona, String cedula) {
+        return cedula.matches("\\d+");
     }
 }
