@@ -19,7 +19,7 @@ public class PilaresPrincipal {
         System.out.println("");
 
         //Instancia 1 de la clase triangulo
-        //Triangulo lote3 = new Triangulo(20, 15);
+        //Triangulo lote3 = new Triangulo(20, 15);R
         //hallarAreaGeneral(lote3);
 
 
