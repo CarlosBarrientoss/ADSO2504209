@@ -5,7 +5,7 @@ public class Person {
     private int id;
     private int salary;
     private long phoneNumber;
-    private char gender;
+    private String gender;
 
     public Person() {
     }
@@ -14,7 +14,7 @@ public class Person {
         this.name = name;
     }
 
-    public Person(String name, int id, int salary, int phoneNumber, char gender) {
+    public Person(String name, int id, int salary, int phoneNumber, String gender) {
         this.name = name;
         this.id = id;
         this.salary = salary;
@@ -54,11 +54,11 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
