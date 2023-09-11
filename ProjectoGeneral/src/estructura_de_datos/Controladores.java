@@ -5,7 +5,14 @@ import java.util.Scanner;
 public class Controladores implements IArregloPersona {
     //metodo para validar el nombre
 
+    public static boolean nombreValido(String nombre ) {
+        return nombre.matches("^[a-zA-Z\\s]+$");
+    }
 
+
+    public static boolean cedulaValido(String cedula) {
+        return cedula.matches("\\d+");
+    }
 
 
     @Override
@@ -71,13 +78,6 @@ public class Controladores implements IArregloPersona {
         }
     }
 
-    @Override
-    public boolean nombreValido(Persona[] persona, String nombre ) {
-        return nombre.matches("^[a-zA-Z\\s]+$");
-    }
 
-    @Override
-    public boolean cedulaValido(Persona[] persona, String cedula) {
-        return cedula.matches("\\d+");
-    }
+
 }
