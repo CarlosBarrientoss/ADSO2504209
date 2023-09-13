@@ -36,6 +36,3 @@ build/
 
 ### Mac OS ###
 .DS_Store
-
-### Tests ###
-src/test/java/sena/william_pena/
