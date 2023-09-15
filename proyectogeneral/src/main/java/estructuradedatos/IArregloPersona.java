@@ -1,7 +1,9 @@
 
 package estructuradedatos;
 
+import java.util.Scanner;
+
 public interface IArregloPersona {
-    void llenarArreglo();
-    void mostrarArreglo();
+    void llenarArreglo(Persona personas[], Scanner consola);
+    void mostrarArreglo(Persona personas[]);
 }

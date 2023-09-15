@@ -1,15 +1,23 @@
 
+import estructuradedatos.Controladores;
 import estructuradedatos.Persona;
 import java.util.Scanner;
 
-public class ArrayPrincipal {
+public class ArrayPrincipal{
 
     public static void main(String[] args) {
         
         Persona personas[]= new Persona[5];
         Scanner consola=new Scanner(System.in);
         
-        llenarArreglo(personas, consola);
+        Controladores controlador=new Controladores();
+        controlador.llenarArreglo(personas, consola);
+        controlador.mostrarArreglo(personas);
+        consola.close();
+        
+        
+        
+//        llenarArreglo(personas, consola);
         
         
         
@@ -58,21 +66,21 @@ public class ArrayPrincipal {
 //        }
     }
 
-    public static void llenarArreglo(Persona personas[], Scanner consola) {
-
-        for (int i = 0; i < personas.length; i++) {
-            System.out.println("ingrese el nombre de la persona= " + (i + 1) + ":");
-            personas[i] = new Persona(consola.nextLine());
-
-        }
-    }
-
-    public static void mostrarArreglo(Persona personas[]) {
-        for (Persona nombre : personas) {
-            System.out.println("nombre persona = " + nombre);
-        }
-
-    }
+//    public static void llenarArreglo(Persona personas[], Scanner consola) {
+//
+//        for (int i = 0; i < personas.length; i++) {
+//            System.out.println("ingrese el nombre de la persona= " + (i + 1) + ":");
+//            personas[i] = new Persona(consola.nextLine());
+//
+//        }
+//    }
+//
+//    public static void mostrarArreglo(Persona personas[]) {
+//        for (Persona nombre : personas) {
+//            System.out.println("nombre persona = " + nombre);
+//        }
+//
+//    }
     
     
 }
