@@ -1,4 +1,4 @@
-package com.joshua.connection;
+package com.jose.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
