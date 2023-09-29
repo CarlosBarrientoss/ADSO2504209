@@ -62,4 +62,16 @@ public class Students {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Students{");
+        sb.append("id_Student=").append(id_Student);
+        sb.append(", nombre='").append(nombre).append('\'');
+        sb.append(", apellido='").append(apellido).append('\'');
+        sb.append(", telefono='").append(telefono).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

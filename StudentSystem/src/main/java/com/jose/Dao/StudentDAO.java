@@ -17,7 +17,7 @@ public class StudentDAO {
         PreparedStatement ps;
         ResultSet rs;
         Connection con = getConnectionDB();
-        String sql = "SELECT * FROM  student ORDER BY id_Student";
+        String sql = "SELECT * FROM  student ORDER BY idstudent";
 
         try {
             ps = con.prepareStatement(sql);
@@ -25,8 +25,8 @@ public class StudentDAO {
 
             while (rs.next()){
                 Students student = new Students();
-                student.setId_Student(rs.getInt("id_student"));
-                student.setNombre(rs.getString("first_name"));
+                student.setId_Student(rs.getInt("idstudent"));
+                student.setNombre(rs.getString("firts_name"));
                 student.setApellido(rs.getString("last_name"));
                 student.setTelefono(rs.getString("phone"));
                 student.setEmail(rs.getString("email"));
@@ -47,6 +47,36 @@ public class StudentDAO {
 
     }
 
+    public boolean searchsStudentByID(Students student){
+        PreparedStatement ps;
+        ResultSet rs;
+        //Crear la conexion
+        Connection con = getConnectionDB();
+        String sql = "SELECT * FROM student WHERE idstudent = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1,student.getId_Student());
+            rs = ps.executeQuery();
+
+            while (rs.next()){
+                student.setNombre(rs.getString("firts_name"));
+                student.setApellido(rs.getString("last_name"));
+                student.setTelefono(rs.getString("phone"));
+                student.setEmail(rs.getString("email"));
+            }
+        }catch (Exception ex){
+            System.out.println("An error ocurred" + ex.getMessage());
+        }finally {
+            try {
+                con.close();
+            }catch (Exception ex){
+                System.out.println("An error ocurred while tryling" + ex.getMessage());
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
         StudentDAO studentDao = new StudentDAO();
@@ -54,6 +84,15 @@ public class StudentDAO {
 
         List<Students> students = studentDao.listar();
         students.forEach(System.out::println);
+
+        Students objectStudent = new Students(2);
+        boolean foundObject = studentDao.searchsStudentByID(objectStudent);
+        if (foundObject){
+            System.out.println("student found" + objectStudent);
+        }else {
+            System.out.println("no found" + objectStudent);
+        }
+
 
 
     }
