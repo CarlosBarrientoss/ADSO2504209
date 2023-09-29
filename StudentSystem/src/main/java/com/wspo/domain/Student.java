@@ -2,7 +2,7 @@ package com.wspo.domain;
 
 public class Student {
     private int idStudent;
-    private String name;
+    private String nameStudent;
     private String lastName;
     private String phoneNumber;
     private String email;
@@ -12,7 +12,14 @@ public class Student {
 
     public Student(int idStudent, String name, String lastName, String phoneNumber, String email) {
         this.idStudent = idStudent;
-        this.name = name;
+        this.nameStudent = name;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public Student(String nameStudent, String lastName, String phoneNumber, String email) {
+        this.nameStudent = nameStudent;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -26,12 +33,12 @@ public class Student {
         this.idStudent = idStudent;
     }
 
-    public String getName() {
-        return name;
+    public String getNameStudent() {
+        return nameStudent;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameStudent(String nameStudent) {
+        this.nameStudent = nameStudent;
     }
 
     public String getLastName() {
@@ -64,6 +71,6 @@ public class Student {
                 Student (id = %d, name = %s, lastName = %s, phoneNumber = %s, email = %s)
                 """;
 
-        return String.format(text, this.idStudent, this.name, this.lastName, this.phoneNumber, this.email);
+        return String.format(text, this.idStudent, this.nameStudent, this.lastName, this.phoneNumber, this.email);
     }
 }
