@@ -33,5 +33,9 @@ public class App {
         boolean updateResult = studentDao.updateStudent(student);
         System.out.println(updateResult);
         System.out.println(student);
+
+        System.out.println("\nSearching student by id 2");
+        boolean searchResult = studentDao.searchStudentById(2);
+        System.out.println(searchResult);
     }
 }

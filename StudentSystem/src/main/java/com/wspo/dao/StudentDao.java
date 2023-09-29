@@ -116,14 +116,15 @@ public class StudentDao implements IStudentService {
             ps.setInt(1, id);
             ps.executeQuery();
             rs = ps.getResultSet();
-            rs.next();
-            student.setIdStudent(rs.getInt("idStudent"));
-            student.setNameStudent(rs.getString("nameStudent"));
-            student.setLastName(rs.getString("lastNameStudent"));
-            student.setPhoneNumber(rs.getString("phoneNumber"));
-            student.setEmail(rs.getString("email"));
+            while (rs.next()) {
+                student.setIdStudent(rs.getInt("idStudent"));
+                student.setNameStudent(rs.getString("nameStudent"));
+                student.setLastName(rs.getString("lastNameStudent"));
+                student.setPhoneNumber(rs.getString("phoneNumber"));
+                student.setEmail(rs.getString("email"));
+            }
 
-            if (!student.getNameStudent().equals("")) {
+            if (!(student.getNameStudent() == null)) {
                 found = true;
             }
         } catch (Exception e) {
