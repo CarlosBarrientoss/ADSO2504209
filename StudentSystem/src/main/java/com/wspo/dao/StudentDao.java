@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class StudentDao implements IStudentService {
 
@@ -49,7 +50,7 @@ public class StudentDao implements IStudentService {
     }
 
     @Override
-    public Student getStudentById(int id) {
+    public Optional<Student> getStudentById(int id) {
         Student student = new Student();
         String query = "SELECT * FROM student WHERE idStudent = ?;";
         PreparedStatement ps;
@@ -71,7 +72,7 @@ public class StudentDao implements IStudentService {
             e.printStackTrace();
         }
 
-        return student;
+        return Optional.of(student);
     }
 
     @Override

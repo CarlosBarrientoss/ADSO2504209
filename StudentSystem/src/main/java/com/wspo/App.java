@@ -17,7 +17,7 @@ public class App {
         students.forEach(System.out::println);
 
         System.out.println("\nGetting student by id 2 \n");
-        student = studentDao.getStudentById(2);
+        student = studentDao.getStudentById(2).get();
         System.out.println(student);
 
         System.out.println("\nDeleting student by id");

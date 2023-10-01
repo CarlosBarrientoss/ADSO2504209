@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class ConnectionFactory {
     String dbName = "sena_db";
-    String url = "jdbc:mysql://localhost:3307/" + dbName;
+    String url = "jdbc:mysql://localhost:3306/" + dbName;
     String user = "root";
     String password = "root";
     Connection con;

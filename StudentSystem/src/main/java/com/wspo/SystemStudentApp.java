@@ -4,6 +4,7 @@ import com.wspo.dao.StudentDao;
 import com.wspo.domain.Student;
 import com.wspo.factory.ConnectionFactory;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 public class SystemStudentApp {
@@ -107,6 +108,19 @@ public class SystemStudentApp {
                 }
             }
             case 6 -> {
+                System.out.print("\nEnter the student's id: ");
+                int id = Integer.parseInt(in.nextLine());
+                System.out.println("\nGetting student");
+                Optional<Student> studentOptional = studentDao.getStudentById(id);
+                boolean wasFound = studentOptional.isPresent();
+                if (wasFound) {
+                    Student student = studentOptional.get();
+                    System.out.println(student);
+                } else {
+                    System.out.println("The student was not found");
+                }
+            }
+            case 7 -> {
                 System.out.println("\nGood Bye!!");
                 keep = false;
             }
@@ -124,7 +138,8 @@ public class SystemStudentApp {
                 [3] Add student
                 [4] Update student
                 [5] Delete student
-                [6] Exit
+                [6] Get Student by id
+                [7] Exit
                 
                 Select an option: """;
         System.out.println(menu);
